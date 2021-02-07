@@ -1,11 +1,11 @@
-# Default values for user-service.
+# Default values for shopify-service.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository: ghcr.io/ikenom/user-service
+  repository: ghcr.io/ikenom/shopify-service
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
@@ -89,3 +89,9 @@ rabbitmq:
     username: user
     password: password
     erlangCookie: d
+
+shopify:
+  api_key: b52211180b3975e4b735bcb591133a3c
+  api_password: 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
+  webhook_secret: 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
+  shop_name: fytr-dev

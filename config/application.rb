@@ -39,5 +39,9 @@ module EcommerceBackend
     config.api_only = true
 
     config.active_job.queue_adapter = :sneakers
+
+    shop_url = "https://#{ENV['API_KEY']}:#{ENV['SHOPIFY_API_PASSWORD']}@#{ENV['SHOPIFY_SHOP_NAME']}.myshopify.com"
+    ShopifyAPI::Base.site = shop_url
+    ShopifyAPI::Base.api_version = "2021-01" # find the latest stable api_version here: https://shopify.dev/concepts/about-apis/versioning
   end
 end

@@ -1,9 +1,10 @@
-class Product
+# frozen_string_literal: true
 
+class Product
   include Mongoid::Document
 
   field :shopify_id, type: String
-  field :variant_id, type: String #Price of a product and tax code info is associated with its variant
+  field :variant_id, type: String # Price of a product and tax code info is associated with its variant
   field :price, type: String
   field :name, type: String
   field :type, type: String

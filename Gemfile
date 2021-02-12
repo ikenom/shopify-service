@@ -17,11 +17,11 @@ gem "hutch"
 gem "mongoid"
 gem "sneakers"
 
-gem 'faraday'
+gem "faraday"
 
-gem 'shopify_api'
+gem "shopify_api"
 
-gem 'graphql'
+gem "graphql"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

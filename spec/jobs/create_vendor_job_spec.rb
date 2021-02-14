@@ -29,4 +29,15 @@ RSpec.describe CreateVendorJob, :vcr ,type: :job do
       :business_name => business_name,
     )) 
   end
+
+  it "should not create vendor because of duplicate user_id" do
+    Vendor.create!({
+      user_id: user_id,
+      shopify_id: "test",
+      collection_id: "1",
+      business_name: business_name
+    })
+    expect { perform }.to raise_error(RuntimeError)
+  end
+
 end

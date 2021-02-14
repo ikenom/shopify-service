@@ -9,6 +9,7 @@ class CreateVendorConsumer
       first_name: message[:first_name], 
       last_name: message[:last_name], 
       email: message[:email], 
-      phone: message[:phone])
+      phone: message[:phone]
+    )
   end
 end

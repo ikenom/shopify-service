@@ -36,8 +36,7 @@ class CustomerService
       "phone" => phone,
       "tags" => tags
     })
-
-    pp result 
+    
     raise UserCreationError if result["customerCreate"] && result["customerCreate"]["userErrors"].any?
 
     result["customerCreate"]["customer"]["id"]

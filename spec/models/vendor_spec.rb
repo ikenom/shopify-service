@@ -8,7 +8,7 @@ RSpec.describe Vendor, type: :model do
     it { is_expected.to be_valid }
 
     it { is_expected.to validate_presence_of(:shopify_id) }
-    it { is_expected.to validate_presence_of(:ecommerce_id) }
+    it { is_expected.to validate_presence_of(:user_id) }
     it { is_expected.to validate_presence_of(:collection_id) }
   end
 end

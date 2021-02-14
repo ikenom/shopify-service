@@ -8,7 +8,8 @@ class CreateVendorCollectionJob < ApplicationJob
     Vendor.create!({
       user_id: user_id,
       shopify_id: shopify_id,
-      collection_id: collection_id
+      collection_id: collection_id,
+      business_name: business_name
     })
 
     CreateVendorExporterJob.perform_later(user_id: user_id)

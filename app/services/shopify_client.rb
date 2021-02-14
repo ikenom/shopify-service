@@ -1,6 +1,6 @@
 # frozen_string_literal: true
-module ShopifyClient
 
+module ShopifyClient
   class QueryError < StandardError; end
 
   def shopify_client
@@ -12,8 +12,8 @@ module ShopifyClient
 
     ## Graphql query errors
     if response.errors.any?
-      errorMessages = response.errors.messages.to_s
-      raise QueryError, "Graphql Error Occured with messages #{errorMessages}." # TODO: create a data class for this error
+      error_messages = response.errors.messages.to_s
+      raise QueryError, "Graphql Error Occured with messages #{error_messages}." # TODO: create a data class for this error
     end
 
     response.original_hash["data"]

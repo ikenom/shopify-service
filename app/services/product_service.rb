@@ -58,5 +58,5 @@ class ProductService
     }
   GRAPHQL
 
-  def createProduct(productCreateInput); end
+  def create_product(product_create_input); end
 end

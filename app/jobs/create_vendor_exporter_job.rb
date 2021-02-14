@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateVendorExporterJob < ApplicationJob
   queue_as :default
 

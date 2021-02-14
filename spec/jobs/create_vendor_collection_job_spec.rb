@@ -1,5 +1,6 @@
+# frozen_string_literal: true
 
-RSpec.describe CreateVendorCollectionJob, :vcr ,type: :job do
+RSpec.describe CreateVendorCollectionJob, :vcr, type: :job do
   let(:user_id) { Faker::Internet.email }
   let(:business_name) { Faker::Alphanumeric.alpha }
   let(:shopify_id) { Faker::Alphanumeric.alpha }
@@ -18,7 +19,7 @@ RSpec.describe CreateVendorCollectionJob, :vcr ,type: :job do
 
   it "should queue CreateVendorExporterJob" do
     perform
-    expect(CreateVendorExporterJob).to have_been_enqueued.with(user_id: user_id) 
+    expect(CreateVendorExporterJob).to have_been_enqueued.with(user_id: user_id)
   end
 
   it "should create new vendor" do
@@ -33,12 +34,11 @@ RSpec.describe CreateVendorCollectionJob, :vcr ,type: :job do
 
   it "should not create vendor because business_name already exist" do
     Vendor.create!({
-      user_id: user_id,
-      shopify_id: shopify_id,
-      collection_id: "1",
-      business_name: business_name
-    })
+                     user_id: user_id,
+                     shopify_id: shopify_id,
+                     collection_id: "1",
+                     business_name: business_name
+                   })
     expect { perform }.to raise_error(RuntimeError)
   end
-
 end

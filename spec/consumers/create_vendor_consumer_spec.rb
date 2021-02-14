@@ -1,4 +1,4 @@
-
+# frozen_string_literal: true
 
 RSpec.describe CreateVendorConsumer do
   let(:message) do
@@ -11,7 +11,7 @@ RSpec.describe CreateVendorConsumer do
       phone: Faker::Alphanumeric.alpha
     }
   end
-  subject (:consumer) { described_class.new }
+  subject(:consumer) { described_class.new }
 
   before(:each) do
     ActiveJob::Base.queue_adapter = :test
@@ -20,12 +20,12 @@ RSpec.describe CreateVendorConsumer do
   it "should enqueue create restaurant jobs" do
     consumer.process(message)
     expect(CreateVendorJob).to have_been_enqueued.with(hash_including({
-      user_id: message[:user_id],
-      business_name: message[:business_name],
-      first_name: message[:first_name],
-      last_name: message[:last_name],
-      email: message[:email],
-      phone: message[:phone]
-    }))
+                                                                        user_id: message[:user_id],
+                                                                        business_name: message[:business_name],
+                                                                        first_name: message[:first_name],
+                                                                        last_name: message[:last_name],
+                                                                        email: message[:email],
+                                                                        phone: message[:phone]
+                                                                      }))
   end
 end

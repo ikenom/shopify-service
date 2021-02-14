@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe CreateVendorExporterJob, type: :job do
   let(:user_id) { Faker::Alphanumeric.alpha }
 

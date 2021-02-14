@@ -1,4 +1,6 @@
-RSpec.describe CreateVendorJob, :vcr ,type: :job do
+# frozen_string_literal: true
+
+RSpec.describe CreateVendorJob, :vcr, type: :job do
   let(:user_id) { Faker::Internet.email }
   let(:business_name) { Faker::Alphanumeric.alpha }
   let(:first_name) { Faker::Name.name }
@@ -24,20 +26,19 @@ RSpec.describe CreateVendorJob, :vcr ,type: :job do
   it "should queue CreateVendorCollectionJob" do
     perform
     expect(CreateVendorCollectionJob).to have_been_enqueued.with(hash_including(
-      :shopify_id,
-      :user_id => user_id,
-      :business_name => business_name,
-    )) 
+                                                                   :shopify_id,
+                                                                   user_id: user_id,
+                                                                   business_name: business_name
+                                                                 ))
   end
 
   it "should not create vendor because of duplicate user_id" do
     Vendor.create!({
-      user_id: user_id,
-      shopify_id: "test",
-      collection_id: "1",
-      business_name: business_name
-    })
+                     user_id: user_id,
+                     shopify_id: "test",
+                     collection_id: "1",
+                     business_name: business_name
+                   })
     expect { perform }.to raise_error(RuntimeError)
   end
-
 end

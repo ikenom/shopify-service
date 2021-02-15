@@ -12,8 +12,7 @@ module ShopifyClient
 
     ## Graphql query errors
     if response.errors.any?
-      error_messages = response.errors.messages.to_s
-      raise QueryError, "Graphql Error Occured with messages #{error_messages}." # TODO: create a data class for this error
+      raise QueryError, "Graphql Error Occured with messages #{response.errors.messages}."
     end
 
     response.original_hash["data"]

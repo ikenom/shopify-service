@@ -17,7 +17,7 @@ RSpec.describe CreateVendorConsumer do
     ActiveJob::Base.queue_adapter = :test
   end
 
-  it "should enqueue create restaurant jobs" do
+  it "should enqueue create vendor jobs" do
     consumer.process(message)
     expect(CreateVendorJob).to have_been_enqueued.with(hash_including({
                                                                         user_id: message[:user_id],

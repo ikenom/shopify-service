@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CreateProductExporterJob < ApplicationJob
-  queue_as :default
+  queue_as :shopify_service_create_product_exporter
 
   def perform(vendor_user_id:, product_name:)
     Hutch.connect

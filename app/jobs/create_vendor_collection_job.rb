@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CreateVendorCollectionJob < ApplicationJob
-  queue_as :default
+  queue_as :shopify_service_create_vendor_collection
 
   def perform(user_id:, business_name:, shopify_id:)
     raise "Vendor with business name: #{business_name} already exists" if Vendor.where(business_name: business_name).exists?

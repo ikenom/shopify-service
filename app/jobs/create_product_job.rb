@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CreateProductJob < ApplicationJob
-  queue_as :default
+  queue_as :shopify_service_create_product
 
   def perform(vendor_user_id:, product_type:, product_name:, tags:, price:)
     raise "Vendor with user id: #{vendor_user_id} does not exist" unless Vendor.where(user_id: vendor_user_id).exists?

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class UpdateProductJob < ApplicationJob
-  queue_as :default
+  queue_as :shopify_service_update_product
 
   def perform(vendor_user_id:, product_shopify_id:, product_variant_id:, price:, product_name:)
     raise "Vendor with user id: #{vendor_user_id} does not exist" unless Vendor.where(user_id: vendor_user_id).exists?

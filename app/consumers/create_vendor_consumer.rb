@@ -3,6 +3,7 @@
 class CreateVendorConsumer
   include Hutch::Consumer
   consume "shopify.vendor.create"
+  queue_name "consumer_shopify_service_create_vendor"
 
   def process(message)
     CreateVendorJob.perform_later(

@@ -3,6 +3,7 @@
 class CreateProductConsumer
   include Hutch::Consumer
   consume "shopify.product.create"
+  queue_name "consumer_shopify_service_create_product"
 
   def process(message)
     CreateProductJob.perform_later(

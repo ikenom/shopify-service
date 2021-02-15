@@ -21,6 +21,7 @@ gem "faraday"
 
 gem "shopify_api"
 
+gem "advanced-sneakers-activejob"
 gem "graphql"
 
 group :development, :test do

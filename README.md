@@ -1,5 +1,5 @@
 ![CI](https://github.com/ikenom/shopify-service/workflows/CI/badge.svg)
-
+![Release](https://github.com/ikenom/shopify-service/workflows/Release/badge.svg)
 # README
 
 This README would normally document whatever steps are necessary to get the

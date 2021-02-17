@@ -1,0 +1,128 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://fytr-dev.myshopify.com/admin/api/2021-01/graphql.json
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation ProductService__CREATE_PRODUCT_QUERY($business_name:
+        String!, $tags: [String!], $product_type: String, $collection_to_join: ID!,
+        $product_name: String!) {\n  productCreate(input: {vendor: $business_name,
+        title: $product_name, tags: $tags, productType: $product_type, collectionsToJoin:
+        [$collection_to_join]}) {\n    product {\n      id\n      title\n      tags\n      createdAt\n      variants(first:
+        1) {\n        edges {\n          node {\n            id\n          }\n        }\n      }\n    }\n    userErrors
+        {\n      field\n      message\n    }\n  }\n}","variables":{"business_name":"test
+        name","product_type":"fzngzyeznebritrupcxvnoczfrqwhzcl","collection_to_join":"gid://shopify/Collection/244474642629","product_name":"Sherman
+        Windler","tags":["Sen. Gregorio Schamberger"]},"operationName":"ProductService__CREATE_PRODUCT_QUERY"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - ShopifyAPI/9.3.0 ActiveResource/5.1.1 Ruby/2.7.1
+      Authorization:
+      - "<redacted-request>"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 17 Feb 2021 03:12:02 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Sorting-Hat-Podid:
+      - '196'
+      X-Sorting-Hat-Shopid:
+      - '54253060293'
+      Vary:
+      - Accept-Encoding
+      Referrer-Policy:
+      - origin-when-cross-origin
+      X-Frame-Options:
+      - DENY
+      X-Shopid:
+      - '54253060293'
+      X-Shardid:
+      - '196'
+      X-Stats-Userid:
+      - ''
+      X-Stats-Apiclientid:
+      - '4878835'
+      X-Stats-Apipermissionid:
+      - '307431440581'
+      X-Shopify-Api-Terms:
+      - By accessing or using the Shopify API you agree to the Shopify API License
+        and Terms of Use at https://www.shopify.com/legal/api-terms
+      X-Shopify-Api-Version:
+      - 2021-01
+      Content-Language:
+      - en
+      Strict-Transport-Security:
+      - max-age=7889238
+      X-Shopify-Stage:
+      - production
+      Content-Security-Policy:
+      - 'default-src ''self'' data: blob: ''unsafe-inline'' ''unsafe-eval'' https://*
+        shopify-pos://*; block-all-mixed-content; child-src ''self'' https://* shopify-pos://*;
+        connect-src ''self'' wss://* https://*; frame-ancestors ''none''; img-src
+        ''self'' data: blob: https:; script-src https://cdn.shopify.com https://cdn.shopifycdn.net
+        https://checkout.shopifycs.com https://js-agent.newrelic.com https://bam.nr-data.net
+        https://api.stripe.com https://mpsnare.iesnare.com https://appcenter.intuit.com
+        https://www.paypal.com https://js.braintreegateway.com https://c.paypal.com
+        https://maps.googleapis.com https://www.google-analytics.com https://v.shopify.com
+        https://widget.intercom.io https://js.intercomcdn.com ''self'' ''unsafe-inline''
+        ''unsafe-eval''; upgrade-insecure-requests; report-uri /csp-report?source%5Baction%5D=query&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fgraphql&source%5Bsection%5D=admin_api&source%5Buuid%5D=1d2da3ef-f334-48d2-94c1-63fbba7b67ce'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block; report=/xss-report?source%5Baction%5D=query&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fgraphql&source%5Bsection%5D=admin_api&source%5Buuid%5D=1d2da3ef-f334-48d2-94c1-63fbba7b67ce
+      X-Dc:
+      - gcp-us-east1,gcp-us-central1,gcp-us-central1
+      Nel:
+      - '{"report_to":"network-errors","max_age":2592000,"success_fraction":0.0001}'
+      - '{"report_to":"network-errors","max_age":2592000,"success_fraction":0.0001}'
+      Report-To:
+      - '{"group":"network-errors","max_age":2592000,"endpoints":[{"url":"https://monorail-edge.shopifycloud.com/v1/reports/nel/20190325/shopify"}]}'
+      - '{"group":"network-errors","max_age":2592000,"endpoints":[{"url":"https://monorail-edge.shopifycloud.com/v1/reports/nel/20190325/shopify"}]}'
+      X-Request-Id:
+      - 1d2da3ef-f334-48d2-94c1-63fbba7b67ce
+      Set-Cookie:
+      - "<redacted-response>"
+      - _shopify_fs=2021-02-17T03%3A12%3A02Z; Expires=Thu, 17-Feb-22 03:12:02 GMT;
+        Domain=fytr-dev.myshopify.com; Path=/; SameSite=Lax
+      - _shopify_s=005471f4-bafe-456f-bbbe-e60bbf060337; Expires=Wed, 17-Feb-21 03:42:02
+        GMT; Domain=fytr-dev.myshopify.com; Path=/; SameSite=Lax
+      - _shopify_y=b7c3a7c3-d432-4b9e-99a5-18c505da8583; Expires=Thu, 17-Feb-22 03:12:02
+        GMT; Domain=fytr-dev.myshopify.com; Path=/; SameSite=Lax
+      - _y=b7c3a7c3-d432-4b9e-99a5-18c505da8583; Expires=Thu, 17-Feb-22 03:12:02 GMT;
+        Domain=fytr-dev.myshopify.com; Path=/; SameSite=Lax
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '084f9239fb000007c63ba9f000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 622c53099c2b07c6-ATL
+      Alt-Svc:
+      - h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"productCreate":{"product":{"id":"gid:\/\/shopify\/Product\/6219368595653","title":"Sherman
+        Windler","tags":["Sen. Gregorio Schamberger"],"createdAt":"2021-02-17T03:12:01Z","variants":{"edges":[{"node":{"id":"gid:\/\/shopify\/ProductVariant\/38133122564293"}}]}},"userErrors":[]}},"extensions":{"cost":{"requestedQueryCost":13,"actualQueryCost":13,"throttleStatus":{"maximumAvailable":1000.0,"currentlyAvailable":987,"restoreRate":50.0}}}}'
+  recorded_at: Wed, 17 Feb 2021 03:12:02 GMT
+recorded_with: VCR 6.0.0

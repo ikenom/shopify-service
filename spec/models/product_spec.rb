@@ -9,5 +9,6 @@ RSpec.describe Product, type: :model do
 
     it { is_expected.to validate_presence_of(:shopify_id) }
     it { is_expected.to validate_presence_of(:variant_id) }
+    it { is_expected.to validate_presence_of(:name) }
   end
 end

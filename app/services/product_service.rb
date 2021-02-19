@@ -35,6 +35,20 @@ class ProductService
     }
   GRAPHQL
 
+  ## Need product query update for name and tags
+  UPDATE_PRODUCT_QUERY = ShopifyAPI::GraphQL.client.parse <<-'GRAPHQL'
+  mutation($id: ID!, $tags: [String!], $product_name: String) {
+    productUpdate(input: {id: $id, tags: $tags, title: $product_name}) {
+      product {
+        id
+        tags
+        title
+      }
+    }
+  }
+  GRAPHQL
+
+  ## Need product variant query to update a products price.
   UPDATE_PRODUCT_VARIANT_QUERY = ShopifyAPI::GraphQL.client.parse <<-'GRAPHQL'
   mutation($id: ID!, $price: Money) {
     productVariantUpdate(input: {id: $id, price: $price}) {
@@ -46,7 +60,7 @@ class ProductService
   }
   GRAPHQL
 
-  DeleteShopifyProductQuery = ShopifyAPI::GraphQL.client.parse <<-'GRAPHQL'
+  DELETE_SHOPIFY_PRODUCT_QUERY = ShopifyAPI::GraphQL.client.parse <<-'GRAPHQL'
     mutation($id: ID!) {
       productDelete(
         input: { id: $id})
@@ -78,6 +92,16 @@ class ProductService
     }
   end
 
+  def update_product(product_shopify_id:, tags:, product_name:)
+    result = shopify_query(UPDATE_PRODUCT_QUERY, {
+                             id: product_shopify_id,
+                             tags: tags,
+                             title: product_name
+                           })
+
+    result["productUpdate"]["product"]["id"]
+  end
+
   def update_product_price(product_variant_id:, price:)
     result = shopify_query(UPDATE_PRODUCT_VARIANT_QUERY, {
                              id: product_variant_id,
@@ -85,5 +109,13 @@ class ProductService
                            })
 
     result["productVariantUpdate"]["productVariant"]["id"]
+  end
+
+  def delete(product_shopify_id:)
+    result = shopify_query(DELETE_SHOPIFY_PRODUCT_QUERY, {
+                             id: product_shopify_id
+                           })
+
+    result["productDelete"]["deletedProductId"]
   end
 end

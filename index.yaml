@@ -2,6 +2,29 @@ apiVersion: v1
 entries:
   shopify-service:
   - apiVersion: v2
+    appVersion: 3eae934bc34128c4d2f0305894757b3bac6bc30f
+    created: "2021-02-19T02:13:27.909907374Z"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - mongodb
+      version: ~10.3.6
+    - condition: rabbitmq.enabled
+      name: rabbitmq
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - rabbitmq
+      version: ~8.6.3
+    description: A Helm chart for Kubernetes
+    digest: 6c215303d322824afe0cc607b15fe1ddd86273f1cf0c09a4a64827f233d4c465
+    name: shopify-service
+    type: application
+    urls:
+    - https://github.com/ikenom/shopify-service/releases/download/shopify-service-0.0.20/shopify-service-0.0.20.tgz
+    version: 0.0.20
+  - apiVersion: v2
     appVersion: 3617995518899dc5a7d0bc490ed2c070a362c870
     created: "2021-02-15T23:35:07.945423981Z"
     dependencies:

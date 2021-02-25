@@ -7,10 +7,11 @@ class UpdateProductConsumer
 
   def process(message)
     UpdateProductJob.perform_later(
-      vendor_user_id: message[:vendor_user_id],
+      sender_id: message[:sender_id],
+      product_id: message[:product_id],
       product_name: message[:product_name],
-      tags: message[:tags],
-      price: message[:price]
+      price: message[:price],
+      tags: message[:tags]
     )
   end
 end

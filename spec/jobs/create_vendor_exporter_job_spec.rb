@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
 RSpec.describe CreateVendorExporterJob, type: :job do
-  let(:user_id) { Faker::Alphanumeric.alpha }
+  let(:sender_id) { Faker::Alphanumeric.alpha }
+  let(:vendor) { create(:vendor) }
 
   subject(:perform) do
-    described_class.perform_now(user_id: user_id)
+    described_class.perform_now(vendor_id: vendor.id.to_s, sender_id: sender_id)
   end
 
   before(:each) do
@@ -14,7 +15,7 @@ RSpec.describe CreateVendorExporterJob, type: :job do
   end
 
   it "should export vendor" do
-    expect(Hutch).to receive(:publish).with("shopify.vendor.created", user_id: user_id)
+    expect(Hutch).to receive(:publish).with("shopify.vendor.created", sender_id: sender_id, shopify_id: vendor.shopify_id)
     perform
   end
 end

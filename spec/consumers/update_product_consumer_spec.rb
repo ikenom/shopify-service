@@ -3,10 +3,11 @@
 RSpec.describe UpdateProductConsumer do
   let(:message) do
     {
-      vendor_user_id: Faker::Alphanumeric.alpha,
-      product_name: Faker::Alphanumeric.alpha,
-      tags: [Faker::Alphanumeric.alpha],
-      price: Faker::Alphanumeric.alpha
+      sender_id: Faker::Alphanumeric.alpha,
+      product_id: Faker::Alphanumeric.alpha,
+      product_name: Faker::Food.dish,
+      tags: [],
+      price: Faker::Commerce.price(range: 0..10.0, as_string: true)
     }
   end
   subject(:consumer) { described_class.new }
@@ -18,10 +19,11 @@ RSpec.describe UpdateProductConsumer do
   it "should enqueue update product job" do
     consumer.process(message)
     expect(UpdateProductJob).to have_been_enqueued.with(hash_including({
-                                                                         vendor_user_id: message[:vendor_user_id],
+                                                                         sender_id: message[:sender_id],
+                                                                         product_id: message[:product_id],
                                                                          product_name: message[:product_name],
-                                                                         tags: message[:tags],
-                                                                         price: message[:price]
+                                                                         price: message[:price],
+                                                                         tags: message[:tags]
                                                                        }))
   end
 end

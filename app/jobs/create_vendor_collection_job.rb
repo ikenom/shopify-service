@@ -3,19 +3,15 @@
 class CreateVendorCollectionJob < ApplicationJob
   queue_as :shopify_service_create_vendor_collection
 
-  def perform(user_id:, business_name:, shopify_id:)
-    raise "Vendor with business name: #{business_name} already exists" if Vendor.where(business_name: business_name).exists?
+  def perform(sender_id:, business_name:, phone:, shopify_id:)
+    collection_id = VendorService.new.create_collection(business_name: business_name)
+    vendor = Vendor.create!({
+                              shopify_id: shopify_id,
+                              collection_id: collection_id,
+                              business_name: business_name,
+                              phone: phone
+                            })
 
-    vendor_service = VendorService.new
-    collection_id = vendor_service.create_collection(business_name: business_name)
-
-    Vendor.create!({
-                     user_id: user_id,
-                     shopify_id: shopify_id,
-                     collection_id: collection_id,
-                     business_name: business_name
-                   })
-
-    CreateVendorExporterJob.perform_later(user_id: user_id)
+    CreateVendorExporterJob.perform_later(sender_id: sender_id, vendor_id: vendor.id.to_s)
   end
 end

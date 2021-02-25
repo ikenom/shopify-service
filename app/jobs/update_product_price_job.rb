@@ -6,7 +6,6 @@ class UpdateProductPriceJob < ApplicationJob
   def perform(product_variant_id:, price:)
     raise "Product with product_variant_id: #{product_variant_id} does not exists" unless Product.where(variant_id: product_variant_id).exists?
 
-    product_service = ProductService.new
-    product_service.update_product_price(product_variant_id: product_variant_id, price: price)
+    ProductService.new.update_product_price(product_variant_id: product_variant_id, price: price)
   end
 end

@@ -8,7 +8,8 @@ RSpec.describe CreateVendorConsumer do
       first_name: Faker::Alphanumeric.alpha,
       last_name: Faker::Alphanumeric.alpha,
       email: Faker::Alphanumeric.alpha,
-      phone: Faker::Alphanumeric.alpha
+      phone: Faker::Alphanumeric.alpha,
+      tags: []
     }
   end
   subject(:consumer) { described_class.new }
@@ -25,7 +26,8 @@ RSpec.describe CreateVendorConsumer do
                                                                         first_name: message[:first_name],
                                                                         last_name: message[:last_name],
                                                                         email: message[:email],
-                                                                        phone: message[:phone]
+                                                                        phone: message[:phone],
+                                                                        tags: message[:tags]
                                                                       }))
   end
 end

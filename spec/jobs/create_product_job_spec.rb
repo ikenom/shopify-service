@@ -1,17 +1,24 @@
 # frozen_string_literal: true
 
-RSpec.describe CreateProductJob, :vcr, type: :job do
-  let(:vendor_user_id) { "15" }
-  let(:product_type) { Faker::Alphanumeric.alpha }
-  let(:product_name) { Faker::Name.name }
+RSpec.describe CreateProductJob, type: :job do
+  let(:sender_id) { Faker::Alphanumeric.alpha }
+  let(:vendor) { create(:vendor) }
+  let(:product_type) { Faker::Restaurant.type }
+  let(:product_name) { Faker::Food.dish }
   let(:tags) { [Faker::Name.name] }
-  let(:price) { "2.00" }
+  let(:price) { Faker::Commerce.price(range: 0..10.0, as_string: true) }
 
-  let(:shopify_id) { "gid://shopify/Customer/4636651290821" }
+  let(:payload) do
+    {
+      shopify_id: Faker::Alphanumeric.alpha,
+      variant_id: Faker::Alphanumeric.alpha
+    }
+  end
 
   subject(:perform) do
     described_class.perform_now(
-      vendor_user_id: vendor_user_id,
+      sender_id: sender_id,
+      vendor_id: vendor.shopify_id,
       product_type: product_type,
       product_name: product_name,
       tags: tags,
@@ -21,56 +28,33 @@ RSpec.describe CreateProductJob, :vcr, type: :job do
 
   before(:each) do
     ActiveJob::Base.queue_adapter = :test
+
+    allow_any_instance_of(ProductService).to receive(:create_product).and_return(payload)
   end
 
   it "should queue UpdateProductPriceJob" do
-    Vendor.create!({
-                     user_id: vendor_user_id,
-                     shopify_id: shopify_id,
-                     collection_id: "gid://shopify/Collection/244474642629",
-                     business_name: "test name"
-                   })
     perform
-    expect(UpdateProductPriceJob).to have_been_enqueued.with(hash_including(
-                                                               :product_variant_id,
+    expect(UpdateProductPriceJob).to have_been_enqueued.with({
+                                                               product_variant_id: payload[:variant_id],
                                                                price: price
-                                                             ))
+                                                             })
   end
 
   it "should create new product" do
-    vendor = Vendor.create!({
-                              user_id: vendor_user_id,
-                              shopify_id: shopify_id,
-                              collection_id: "gid://shopify/Collection/244474642629",
-                              business_name: "test name"
-                            })
     expect { perform }.to change { Product.count }.by(1)
-    product = Product.last
 
-    expect(product.shopify_id).to match(%r{(gid://shopify/Product/)+([0-9]*)})
-    expect(product.variant_id).not_to be_nil
-    expect(product.vendor).to eq(vendor)
+    product = Product.last
+    expect(product.shopify_id).to eq(payload[:shopify_id])
+    expect(product.variant_id).to eq(payload[:variant_id])
   end
 
   it "should not create product because vendor does not exist" do
+    vendor.delete
     expect { perform }.to raise_error(RuntimeError)
   end
 
   it "should not create product because product with same name exist on vendor" do
-    vendor = Vendor.create!({
-                              user_id: vendor_user_id,
-                              shopify_id: shopify_id,
-                              collection_id: "gid://shopify/Collection/244474642629",
-                              business_name: "test name"
-                            })
-
-    Product.create!({
-                      shopify_id: "1",
-                      variant_id: "1",
-                      vendor: vendor,
-                      name: product_name
-                    })
-
+    create(:product, name: product_name, vendor: vendor)
     expect { perform }.to raise_error(RuntimeError)
   end
 end

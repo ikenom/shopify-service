@@ -7,7 +7,8 @@ class CreateProductConsumer
 
   def process(message)
     CreateProductJob.perform_later(
-      vendor_user_id: message[:vendor_user_id],
+      sender_id: message[:sender_id],
+      vendor_id: message[:vendor_id],
       product_type: message[:product_type],
       product_name: message[:product_name],
       tags: message[:tags],

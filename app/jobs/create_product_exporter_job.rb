@@ -3,8 +3,10 @@
 class CreateProductExporterJob < ApplicationJob
   queue_as :shopify_service_create_product_exporter
 
-  def perform(vendor_user_id:, product_name:)
+  def perform(sender_id:, product_id:)
     Hutch.connect
-    Hutch.publish("shopify.product.created", { user_id: vendor_user_id, product_name: product_name })
+
+    product = Product.find(product_id)
+    Hutch.publish("shopify.product.created", { sender_id: sender_id, shopify_id: product.shopify_id })
   end
 end

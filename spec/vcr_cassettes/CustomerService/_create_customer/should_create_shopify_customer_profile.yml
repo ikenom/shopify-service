@@ -2,14 +2,14 @@
 http_interactions:
 - request:
     method: post
-    uri: https://fytr-dev.myshopify.com/admin/api/2021-01/graphql.json
+    uri: https://ikenom-test.myshopify.com/admin/api/2021-01/graphql.json
     body:
       encoding: UTF-8
       string: '{"query":"mutation CustomerService__CREATE_SHOPIFY_CUSTOMER_QUERY($email:
         String!, $firstName: String!, $lastName: String, $phone: String, $tags: [String!])
         {\n  customerCreate(input: {email: $email, firstName: $firstName, lastName:
         $lastName, phone: $phone, tags: $tags}) {\n    customer {\n      id\n      firstName\n      lastName\n      email\n      phone\n    }\n    userErrors
-        {\n      field\n      message\n    }\n  }\n}","variables":{"email":"test@gmail.com","firstName":"John","lastName":"Smith","phone":"5123439583","tags":"test-tag"},"operationName":"CustomerService__CREATE_SHOPIFY_CUSTOMER_QUERY"}'
+        {\n      field\n      message\n    }\n  }\n}","variables":{"email":"bill_gusikowski@fake.com","firstName":"Amada","lastName":"Gulgowski","phone":"6787934992","tags":"test-tag"},"operationName":"CustomerService__CREATE_SHOPIFY_CUSTOMER_QUERY"}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -27,7 +27,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 14 Feb 2021 02:09:54 GMT
+      - Thu, 25 Feb 2021 23:17:38 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -35,9 +35,9 @@ http_interactions:
       Connection:
       - keep-alive
       X-Sorting-Hat-Podid:
-      - '196'
+      - '199'
       X-Sorting-Hat-Shopid:
-      - '54253060293'
+      - '52915503304'
       Vary:
       - Accept-Encoding
       Referrer-Policy:
@@ -45,15 +45,15 @@ http_interactions:
       X-Frame-Options:
       - DENY
       X-Shopid:
-      - '54253060293'
+      - '52915503304'
       X-Shardid:
-      - '196'
+      - '199'
       X-Stats-Userid:
       - ''
       X-Stats-Apiclientid:
-      - '4878835'
+      - '4905995'
       X-Stats-Apipermissionid:
-      - '307431440581'
+      - '306260967624'
       X-Shopify-Api-Terms:
       - By accessing or using the Shopify API you agree to the Shopify API License
         and Terms of Use at https://www.shopify.com/legal/api-terms
@@ -63,6 +63,8 @@ http_interactions:
       - en
       Strict-Transport-Security:
       - max-age=7889238
+      X-Request-Id:
+      - ca98eb7e-6c15-4424-883c-b76cd2184c2e
       X-Shopify-Stage:
       - production
       Content-Security-Policy:
@@ -75,7 +77,7 @@ http_interactions:
         https://www.paypal.com https://js.braintreegateway.com https://c.paypal.com
         https://maps.googleapis.com https://www.google-analytics.com https://v.shopify.com
         https://widget.intercom.io https://js.intercomcdn.com ''self'' ''unsafe-inline''
-        ''unsafe-eval''; upgrade-insecure-requests; report-uri /csp-report?source%5Baction%5D=query&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fgraphql&source%5Bsection%5D=admin_api&source%5Buuid%5D=3f2a940f-6356-4f5b-b739-46f5b5210762'
+        ''unsafe-eval''; upgrade-insecure-requests; report-uri /csp-report?source%5Baction%5D=query&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fgraphql&source%5Bsection%5D=admin_api&source%5Buuid%5D=ca98eb7e-6c15-4424-883c-b76cd2184c2e'
       X-Content-Type-Options:
       - nosniff
       X-Download-Options:
@@ -83,41 +85,37 @@ http_interactions:
       X-Permitted-Cross-Domain-Policies:
       - none
       X-Xss-Protection:
-      - 1; mode=block; report=/xss-report?source%5Baction%5D=query&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fgraphql&source%5Bsection%5D=admin_api&source%5Buuid%5D=3f2a940f-6356-4f5b-b739-46f5b5210762
+      - 1; mode=block; report=/xss-report?source%5Baction%5D=query&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fgraphql&source%5Bsection%5D=admin_api&source%5Buuid%5D=ca98eb7e-6c15-4424-883c-b76cd2184c2e
       X-Dc:
-      - gcp-us-east1,gcp-us-central1,gcp-us-central1
+      - gcp-us-east1,gcp-us-east1
+      Set-Cookie:
+      - "<redacted-response>"
+      - _shopify_fs=2021-02-25T23%3A17%3A38Z; Expires=Fri, 25-Feb-22 23:17:38 GMT;
+        Domain=ikenom-test.myshopify.com; Path=/; SameSite=Lax
+      - _shopify_s=dd54182f-9ea1-4d45-9ab3-58ac0f91c20b; Expires=Thu, 25-Feb-21 23:47:38
+        GMT; Domain=ikenom-test.myshopify.com; Path=/; SameSite=Lax
+      - _shopify_y=3e66fc6c-2282-431a-a9e1-0e34a994556d; Expires=Fri, 25-Feb-22 23:17:38
+        GMT; Domain=ikenom-test.myshopify.com; Path=/; SameSite=Lax
+      - _y=3e66fc6c-2282-431a-a9e1-0e34a994556d; Expires=Fri, 25-Feb-22 23:17:38 GMT;
+        Domain=ikenom-test.myshopify.com; Path=/; SameSite=Lax
       Nel:
-      - '{"report_to":"network-errors","max_age":2592000,"success_fraction":0.0001}'
       - '{"report_to":"network-errors","max_age":2592000,"success_fraction":0.0001}'
       Report-To:
       - '{"group":"network-errors","max_age":2592000,"endpoints":[{"url":"https://monorail-edge.shopifycloud.com/v1/reports/nel/20190325/shopify"}]}'
-      - '{"group":"network-errors","max_age":2592000,"endpoints":[{"url":"https://monorail-edge.shopifycloud.com/v1/reports/nel/20190325/shopify"}]}'
-      X-Request-Id:
-      - 3f2a940f-6356-4f5b-b739-46f5b5210762
-      Set-Cookie:
-      - "<redacted-response>"
-      - _shopify_fs=2021-02-14T02%3A09%3A54Z; Expires=Mon, 14-Feb-22 02:09:54 GMT;
-        Domain=fytr-dev.myshopify.com; Path=/; SameSite=Lax
-      - _shopify_s=7d792277-3223-4f6e-aaa4-d75986059e02; Expires=Sun, 14-Feb-21 02:39:54
-        GMT; Domain=fytr-dev.myshopify.com; Path=/; SameSite=Lax
-      - _shopify_y=3bcd602e-c01a-4c1e-b94e-f569b1b65768; Expires=Mon, 14-Feb-22 02:09:54
-        GMT; Domain=fytr-dev.myshopify.com; Path=/; SameSite=Lax
-      - _y=3bcd602e-c01a-4c1e-b94e-f569b1b65768; Expires=Mon, 14-Feb-22 02:09:54 GMT;
-        Domain=fytr-dev.myshopify.com; Path=/; SameSite=Lax
       Cf-Cache-Status:
       - DYNAMIC
       Cf-Request-Id:
-      - '083fe64438000007beef845000000001'
+      - '087d14dfdb0000f3693a290000000001'
       Expect-Ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Server:
       - cloudflare
       Cf-Ray:
-      - 62133fe6bbfb07be-ATL
+      - 62752412f885f369-ATL
       Alt-Svc:
       - h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"customerCreate":{"customer":{"id":"gid:\/\/shopify\/Customer\/4633421512901","firstName":"John","lastName":"Smith","email":"test@gmail.com","phone":"+15123439583"},"userErrors":[]}},"extensions":{"cost":{"requestedQueryCost":10,"actualQueryCost":10,"throttleStatus":{"maximumAvailable":1000.0,"currentlyAvailable":990,"restoreRate":50.0}}}}'
-  recorded_at: Sun, 14 Feb 2021 02:09:54 GMT
+      string: '{"data":{"customerCreate":{"customer":{"id":"gid:\/\/shopify\/Customer\/5025378861256","firstName":"Amada","lastName":"Gulgowski","email":"bill_gusikowski@fake.com","phone":"+16787934992"},"userErrors":[]}},"extensions":{"cost":{"requestedQueryCost":10,"actualQueryCost":10,"throttleStatus":{"maximumAvailable":1000.0,"currentlyAvailable":990,"restoreRate":50.0}}}}'
+  recorded_at: Thu, 25 Feb 2021 23:17:40 GMT
 recorded_with: VCR 6.0.0

@@ -34,7 +34,7 @@ RSpec.describe CreateVendorJob, type: :job do
                                                                    shopify_id: shopify_id,
                                                                    sender_id: sender_id,
                                                                    business_name: business_name
-    })
+                                                                 })
   end
 
   it "should not create vendor because of duplicate phone #" do
@@ -48,7 +48,7 @@ RSpec.describe CreateVendorJob, type: :job do
   end
 
   it "should add to tag list" do
-    expect_any_instance_of(CustomerService).to receive(:create_customer).with(hash_including({tags: ["tag1", "vendor"]})).and_return(shopify_id)
+    expect_any_instance_of(CustomerService).to receive(:create_customer).with(hash_including({ tags: %w[tag1 vendor] })).and_return(shopify_id)
     perform
   end
 end

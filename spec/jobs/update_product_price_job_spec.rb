@@ -18,8 +18,8 @@ RSpec.describe UpdateProductPriceJob, type: :job do
 
   it "should update product price" do
     expect_any_instance_of(ProductService).to receive(:update_product_price).with({
-      product_variant_id: product.variant_id, price: price
-    }).once
+                                                                                    product_variant_id: product.variant_id, price: price
+                                                                                  }).once
 
     perform
   end

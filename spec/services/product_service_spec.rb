@@ -8,9 +8,9 @@ RSpec.describe ProductService, :vcr do
   let(:price) { Faker::Commerce.price(range: 0..10.0, as_string: true) }
 
   let(:collection_id) { VendorService.new.create_collection(business_name: business_name) }
-  let(:product_response) {
+  let(:product_response) do
     client.create_product(business_name: business_name, product_type: product_type, collection_to_join: collection_id, product_name: product_name, tags: tags)
-  }
+  end
 
   subject(:client) { ProductService.new }
 

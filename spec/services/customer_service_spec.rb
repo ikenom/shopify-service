@@ -4,7 +4,7 @@ RSpec.describe CustomerService, :vcr do
   let(:first_name) { Faker::Name.first_name }
   let(:last_name) { Faker::Name.last_name }
   let(:email) { "#{Faker::Internet.username}@fake.com" }
-  let(:phone_unfiltered) { Faker::PhoneNumber.cell_phone.tr('^0-9', '') }
+  let(:phone_unfiltered) { Faker::PhoneNumber.cell_phone.tr("^0-9", "") }
   let(:phone) do
     phone_unfiltered[0..5] = "678793"
     phone_unfiltered[0..9]

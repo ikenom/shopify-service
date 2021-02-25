@@ -9,9 +9,7 @@ class CreateProductJob < ApplicationJob
     raise "Vendor id: #{vendor_id} does not exist" if vendor.nil?
     raise "Product with name: #{product_name} exists on vendor with shopify id #{vendor_id}" if vendor.products.any? { |product| product.name == product_name }
 
-    product_service = ProductService.new
-    result = product_service.create_product(business_name: vendor.business_name, product_type: product_type, collection_to_join: vendor.collection_id, product_name: product_name, tags: tags)
-
+    result = ProductService.new.create_product(business_name: vendor.business_name, product_type: product_type, collection_to_join: vendor.collection_id, product_name: product_name, tags: tags)
     product = Product.create!({
                       name: product_name,
                       shopify_id: result[:shopify_id],

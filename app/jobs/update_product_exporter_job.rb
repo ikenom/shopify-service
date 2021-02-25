@@ -3,11 +3,12 @@
 class UpdateProductExporterJob < ApplicationJob
   queue_as :shopify_service_update_product_exporter
 
-  def perform(vendor_user_id:, product_name:)
+  def perform(sender_id:, product_id:)
     Hutch.connect
+    product = Product.find(product_id)
     Hutch.publish("shopify.product.updated", {
-                    vendor_user_id: vendor_user_id,
-                    product_name: product_name
+      sender_id: sender_id,
+      product_id: product.shopify_id
                   })
   end
 end

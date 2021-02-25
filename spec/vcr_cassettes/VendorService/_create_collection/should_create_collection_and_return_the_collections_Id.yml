@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://fytr-dev.myshopify.com/admin/api/2021-01/graphql.json
+    uri: https://ikenom-test.myshopify.com/admin/api/2021-01/graphql.json
     body:
       encoding: UTF-8
       string: '{"query":"mutation VendorService__CREATE_VENDOR_COLLECTION_QUERY($name:
@@ -26,7 +26,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 14 Feb 2021 03:06:47 GMT
+      - Thu, 25 Feb 2021 22:40:01 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -34,9 +34,9 @@ http_interactions:
       Connection:
       - keep-alive
       X-Sorting-Hat-Podid:
-      - '196'
+      - '199'
       X-Sorting-Hat-Shopid:
-      - '54253060293'
+      - '52915503304'
       Vary:
       - Accept-Encoding
       Referrer-Policy:
@@ -44,15 +44,15 @@ http_interactions:
       X-Frame-Options:
       - DENY
       X-Shopid:
-      - '54253060293'
+      - '52915503304'
       X-Shardid:
-      - '196'
+      - '199'
       X-Stats-Userid:
       - ''
       X-Stats-Apiclientid:
-      - '4878835'
+      - '4905995'
       X-Stats-Apipermissionid:
-      - '307431440581'
+      - '306260967624'
       X-Shopify-Api-Terms:
       - By accessing or using the Shopify API you agree to the Shopify API License
         and Terms of Use at https://www.shopify.com/legal/api-terms
@@ -62,6 +62,8 @@ http_interactions:
       - en
       Strict-Transport-Security:
       - max-age=7889238
+      X-Request-Id:
+      - 58cdb9a6-9e9f-4dca-8559-88cd472916c1
       X-Shopify-Stage:
       - production
       Content-Security-Policy:
@@ -74,7 +76,7 @@ http_interactions:
         https://www.paypal.com https://js.braintreegateway.com https://c.paypal.com
         https://maps.googleapis.com https://www.google-analytics.com https://v.shopify.com
         https://widget.intercom.io https://js.intercomcdn.com ''self'' ''unsafe-inline''
-        ''unsafe-eval''; upgrade-insecure-requests; report-uri /csp-report?source%5Baction%5D=query&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fgraphql&source%5Bsection%5D=admin_api&source%5Buuid%5D=f8f18930-2859-451f-8258-7ec9943509f0'
+        ''unsafe-eval''; upgrade-insecure-requests; report-uri /csp-report?source%5Baction%5D=query&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fgraphql&source%5Bsection%5D=admin_api&source%5Buuid%5D=58cdb9a6-9e9f-4dca-8559-88cd472916c1'
       X-Content-Type-Options:
       - nosniff
       X-Download-Options:
@@ -82,42 +84,38 @@ http_interactions:
       X-Permitted-Cross-Domain-Policies:
       - none
       X-Xss-Protection:
-      - 1; mode=block; report=/xss-report?source%5Baction%5D=query&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fgraphql&source%5Bsection%5D=admin_api&source%5Buuid%5D=f8f18930-2859-451f-8258-7ec9943509f0
+      - 1; mode=block; report=/xss-report?source%5Baction%5D=query&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fgraphql&source%5Bsection%5D=admin_api&source%5Buuid%5D=58cdb9a6-9e9f-4dca-8559-88cd472916c1
       X-Dc:
-      - gcp-us-east1,gcp-us-central1,gcp-us-central1
+      - gcp-us-east1,gcp-us-east1
+      Set-Cookie:
+      - "<redacted-response>"
+      - _shopify_fs=2021-02-25T22%3A40%3A01Z; Expires=Fri, 25-Feb-22 22:40:01 GMT;
+        Domain=ikenom-test.myshopify.com; Path=/; SameSite=Lax
+      - _shopify_s=11b6a1a5-2c0b-4a9b-9ae4-a514fd96011e; Expires=Thu, 25-Feb-21 23:10:01
+        GMT; Domain=ikenom-test.myshopify.com; Path=/; SameSite=Lax
+      - _shopify_y=69331e57-7325-4d15-bd44-35037df93105; Expires=Fri, 25-Feb-22 22:40:01
+        GMT; Domain=ikenom-test.myshopify.com; Path=/; SameSite=Lax
+      - _y=69331e57-7325-4d15-bd44-35037df93105; Expires=Fri, 25-Feb-22 22:40:01 GMT;
+        Domain=ikenom-test.myshopify.com; Path=/; SameSite=Lax
       Nel:
-      - '{"report_to":"network-errors","max_age":2592000,"success_fraction":0.0001}'
       - '{"report_to":"network-errors","max_age":2592000,"success_fraction":0.0001}'
       Report-To:
       - '{"group":"network-errors","max_age":2592000,"endpoints":[{"url":"https://monorail-edge.shopifycloud.com/v1/reports/nel/20190325/shopify"}]}'
-      - '{"group":"network-errors","max_age":2592000,"endpoints":[{"url":"https://monorail-edge.shopifycloud.com/v1/reports/nel/20190325/shopify"}]}'
-      X-Request-Id:
-      - f8f18930-2859-451f-8258-7ec9943509f0
-      Set-Cookie:
-      - "<redacted-response>"
-      - _shopify_fs=2021-02-14T03%3A06%3A47Z; Expires=Mon, 14-Feb-22 03:06:47 GMT;
-        Domain=fytr-dev.myshopify.com; Path=/; SameSite=Lax
-      - _shopify_s=b467f0c0-c0a2-42a4-9a2f-bd5978c4ce97; Expires=Sun, 14-Feb-21 03:36:47
-        GMT; Domain=fytr-dev.myshopify.com; Path=/; SameSite=Lax
-      - _shopify_y=e8bc155f-a472-4878-aa1d-955741ef8432; Expires=Mon, 14-Feb-22 03:06:47
-        GMT; Domain=fytr-dev.myshopify.com; Path=/; SameSite=Lax
-      - _y=e8bc155f-a472-4878-aa1d-955741ef8432; Expires=Mon, 14-Feb-22 03:06:47 GMT;
-        Domain=fytr-dev.myshopify.com; Path=/; SameSite=Lax
       Cf-Cache-Status:
       - DYNAMIC
       Cf-Request-Id:
-      - '08401a5922000007be6199f000000001'
+      - '087cf26e1e0000e3caf02f6000000001'
       Expect-Ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Server:
       - cloudflare
       Cf-Ray:
-      - 6213933b6c9f07be-ATL
+      - 6274ecf69a0de3ca-ATL
       Alt-Svc:
       - h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"collectionCreate":{"collection":{"id":"gid:\/\/shopify\/Collection\/244423524549","title":"Vendor
-        1.0"},"userErrors":[]}},"extensions":{"cost":{"requestedQueryCost":10,"actualQueryCost":10,"throttleStatus":{"maximumAvailable":1000.0,"currentlyAvailable":990,"restoreRate":50.0}}}}'
-  recorded_at: Sun, 14 Feb 2021 03:06:47 GMT
+      string: '{"data":{"collectionCreate":{"collection":{"id":"gid:\/\/shopify\/Collection\/261721882824","title":"Vendor
+        1.0"},"userErrors":[]}},"extensions":{"cost":{"requestedQueryCost":10,"actualQueryCost":10,"throttleStatus":{"maximumAvailable":1000.0,"currentlyAvailable":987,"restoreRate":50.0}}}}'
+  recorded_at: Thu, 25 Feb 2021 22:40:02 GMT
 recorded_with: VCR 6.0.0

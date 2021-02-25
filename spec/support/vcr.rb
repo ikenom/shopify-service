@@ -14,9 +14,13 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.configure_rspec_metadata!
 
+  # Only match requests by the URI and params.
+  request_uri_matcher = lambda do |real, cassette|
+    UrlMatchers.match_without_site?(real.uri, cassette.uri)
+  end
+
   config.default_cassette_options = {
-    match_requests_on: [:method,
-                        VCR.request_matchers.uri_without_param(:key)],
+    match_requests_on: [request_uri_matcher],
     record: :new_episodes
   }
 

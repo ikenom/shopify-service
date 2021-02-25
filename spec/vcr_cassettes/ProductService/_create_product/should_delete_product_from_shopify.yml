@@ -2,12 +2,12 @@
 http_interactions:
 - request:
     method: post
-    uri: https://fytr-dev.myshopify.com/admin/api/2021-01/graphql.json
+    uri: https://ikenom-test.myshopify.com/admin/api/2021-01/graphql.json
     body:
       encoding: UTF-8
-      string: '{"query":"mutation ProductService__DELETE_SHOPIFY_PRODUCT_QUERY($id:
-        ID!) {\n  productDelete(input: {id: $id}) {\n    deletedProductId\n    userErrors
-        {\n      field\n      message\n    }\n  }\n}","variables":{"id":"gid://shopify/Product/6216395129029"},"operationName":"ProductService__DELETE_SHOPIFY_PRODUCT_QUERY"}'
+      string: '{"query":"mutation VendorService__CREATE_VENDOR_COLLECTION_QUERY($name:
+        String!) {\n  collectionCreate(input: {title: $name}) {\n    collection {\n      id\n      title\n    }\n    userErrors
+        {\n      field\n      message\n    }\n  }\n}","variables":{"name":"fhbvgavbfdhbvgrszylnwkgltuahkrrd"},"operationName":"VendorService__CREATE_VENDOR_COLLECTION_QUERY"}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 17 Feb 2021 02:13:48 GMT
+      - Thu, 25 Feb 2021 23:04:23 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -33,9 +33,9 @@ http_interactions:
       Connection:
       - keep-alive
       X-Sorting-Hat-Podid:
-      - '196'
+      - '199'
       X-Sorting-Hat-Shopid:
-      - '54253060293'
+      - '52915503304'
       Vary:
       - Accept-Encoding
       Referrer-Policy:
@@ -43,15 +43,15 @@ http_interactions:
       X-Frame-Options:
       - DENY
       X-Shopid:
-      - '54253060293'
+      - '52915503304'
       X-Shardid:
-      - '196'
+      - '199'
       X-Stats-Userid:
       - ''
       X-Stats-Apiclientid:
-      - '4878835'
+      - '4905995'
       X-Stats-Apipermissionid:
-      - '307431440581'
+      - '306260967624'
       X-Shopify-Api-Terms:
       - By accessing or using the Shopify API you agree to the Shopify API License
         and Terms of Use at https://www.shopify.com/legal/api-terms
@@ -61,6 +61,8 @@ http_interactions:
       - en
       Strict-Transport-Security:
       - max-age=7889238
+      X-Request-Id:
+      - a0cc0dca-138d-4fe0-af25-d6c4f078428f
       X-Shopify-Stage:
       - production
       Content-Security-Policy:
@@ -73,7 +75,7 @@ http_interactions:
         https://www.paypal.com https://js.braintreegateway.com https://c.paypal.com
         https://maps.googleapis.com https://www.google-analytics.com https://v.shopify.com
         https://widget.intercom.io https://js.intercomcdn.com ''self'' ''unsafe-inline''
-        ''unsafe-eval''; upgrade-insecure-requests; report-uri /csp-report?source%5Baction%5D=query&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fgraphql&source%5Bsection%5D=admin_api&source%5Buuid%5D=3bb4f3ee-8d9a-4759-ac3c-a38a8980f569'
+        ''unsafe-eval''; upgrade-insecure-requests; report-uri /csp-report?source%5Baction%5D=query&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fgraphql&source%5Bsection%5D=admin_api&source%5Buuid%5D=a0cc0dca-138d-4fe0-af25-d6c4f078428f'
       X-Content-Type-Options:
       - nosniff
       X-Download-Options:
@@ -81,41 +83,275 @@ http_interactions:
       X-Permitted-Cross-Domain-Policies:
       - none
       X-Xss-Protection:
-      - 1; mode=block; report=/xss-report?source%5Baction%5D=query&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fgraphql&source%5Bsection%5D=admin_api&source%5Buuid%5D=3bb4f3ee-8d9a-4759-ac3c-a38a8980f569
+      - 1; mode=block; report=/xss-report?source%5Baction%5D=query&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fgraphql&source%5Bsection%5D=admin_api&source%5Buuid%5D=a0cc0dca-138d-4fe0-af25-d6c4f078428f
       X-Dc:
-      - gcp-us-east1,gcp-us-central1,gcp-us-central1
+      - gcp-us-east1,gcp-us-east1
+      Set-Cookie:
+      - "<redacted-response>"
+      - _shopify_fs=2021-02-25T23%3A04%3A23Z; Expires=Fri, 25-Feb-22 23:04:23 GMT;
+        Domain=ikenom-test.myshopify.com; Path=/; SameSite=Lax
+      - _shopify_s=9a3964ea-4e3e-4efa-872e-65734a07b416; Expires=Thu, 25-Feb-21 23:34:23
+        GMT; Domain=ikenom-test.myshopify.com; Path=/; SameSite=Lax
+      - _shopify_y=e3991ee8-f6a5-4dc6-b684-b97e282fac20; Expires=Fri, 25-Feb-22 23:04:23
+        GMT; Domain=ikenom-test.myshopify.com; Path=/; SameSite=Lax
+      - _y=e3991ee8-f6a5-4dc6-b684-b97e282fac20; Expires=Fri, 25-Feb-22 23:04:23 GMT;
+        Domain=ikenom-test.myshopify.com; Path=/; SameSite=Lax
       Nel:
-      - '{"report_to":"network-errors","max_age":2592000,"success_fraction":0.0001}'
       - '{"report_to":"network-errors","max_age":2592000,"success_fraction":0.0001}'
       Report-To:
       - '{"group":"network-errors","max_age":2592000,"endpoints":[{"url":"https://monorail-edge.shopifycloud.com/v1/reports/nel/20190325/shopify"}]}'
-      - '{"group":"network-errors","max_age":2592000,"endpoints":[{"url":"https://monorail-edge.shopifycloud.com/v1/reports/nel/20190325/shopify"}]}'
-      X-Request-Id:
-      - 3bb4f3ee-8d9a-4759-ac3c-a38a8980f569
-      Set-Cookie:
-      - "<redacted-response>"
-      - _shopify_fs=2021-02-17T02%3A13%3A48Z; Expires=Thu, 17-Feb-22 02:13:48 GMT;
-        Domain=fytr-dev.myshopify.com; Path=/; SameSite=Lax
-      - _shopify_s=2cb7c6ac-0ee5-42c2-b40d-5b59e9105a3f; Expires=Wed, 17-Feb-21 02:43:48
-        GMT; Domain=fytr-dev.myshopify.com; Path=/; SameSite=Lax
-      - _shopify_y=2a693ce5-9db3-44e5-ac76-3640924d339d; Expires=Thu, 17-Feb-22 02:13:48
-        GMT; Domain=fytr-dev.myshopify.com; Path=/; SameSite=Lax
-      - _y=2a693ce5-9db3-44e5-ac76-3640924d339d; Expires=Thu, 17-Feb-22 02:13:48 GMT;
-        Domain=fytr-dev.myshopify.com; Path=/; SameSite=Lax
       Cf-Cache-Status:
       - DYNAMIC
       Cf-Request-Id:
-      - '084f5ceb99000017fbc3bd0000000001'
+      - '087d08bd0e0000eaeb1523c000000001'
       Expect-Ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Server:
       - cloudflare
       Cf-Ray:
-      - 622bfdbf5ec717fb-ATL
+      - 627510a81b3feaeb-ATL
       Alt-Svc:
       - h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"productDelete":{"deletedProductId":"gid:\/\/shopify\/Product\/6216395129029","userErrors":[]}},"extensions":{"cost":{"requestedQueryCost":10,"actualQueryCost":10,"throttleStatus":{"maximumAvailable":1000.0,"currentlyAvailable":990,"restoreRate":50.0}}}}'
-  recorded_at: Wed, 17 Feb 2021 02:13:48 GMT
+      string: '{"data":{"collectionCreate":{"collection":{"id":"gid:\/\/shopify\/Collection\/261739839688","title":"fhbvgavbfdhbvgrszylnwkgltuahkrrd"},"userErrors":[]}},"extensions":{"cost":{"requestedQueryCost":10,"actualQueryCost":10,"throttleStatus":{"maximumAvailable":1000.0,"currentlyAvailable":990,"restoreRate":50.0}}}}'
+  recorded_at: Thu, 25 Feb 2021 23:04:24 GMT
+- request:
+    method: post
+    uri: https://ikenom-test.myshopify.com/admin/api/2021-01/graphql.json
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation ProductService__CREATE_PRODUCT_QUERY($business_name:
+        String!, $tags: [String!], $product_type: String, $collection_to_join: ID!,
+        $product_name: String!) {\n  productCreate(input: {vendor: $business_name,
+        title: $product_name, tags: $tags, productType: $product_type, collectionsToJoin:
+        [$collection_to_join]}) {\n    product {\n      id\n      title\n      tags\n      createdAt\n      variants(first:
+        1) {\n        edges {\n          node {\n            id\n          }\n        }\n      }\n    }\n    userErrors
+        {\n      field\n      message\n    }\n  }\n}","variables":{"business_name":"fhbvgavbfdhbvgrszylnwkgltuahkrrd","product_type":"Burgers","collection_to_join":"gid://shopify/Collection/261739839688","product_name":"Barbecue
+        Ribs","tags":["test","tag"]},"operationName":"ProductService__CREATE_PRODUCT_QUERY"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - ShopifyAPI/9.3.0 ActiveResource/5.1.1 Ruby/2.7.1
+      Authorization:
+      - "<redacted-request>"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 25 Feb 2021 23:04:23 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Sorting-Hat-Podid:
+      - '199'
+      X-Sorting-Hat-Shopid:
+      - '52915503304'
+      Vary:
+      - Accept-Encoding
+      Referrer-Policy:
+      - origin-when-cross-origin
+      X-Frame-Options:
+      - DENY
+      X-Shopid:
+      - '52915503304'
+      X-Shardid:
+      - '199'
+      X-Stats-Userid:
+      - ''
+      X-Stats-Apiclientid:
+      - '4905995'
+      X-Stats-Apipermissionid:
+      - '306260967624'
+      X-Shopify-Api-Terms:
+      - By accessing or using the Shopify API you agree to the Shopify API License
+        and Terms of Use at https://www.shopify.com/legal/api-terms
+      X-Shopify-Api-Version:
+      - 2021-01
+      Content-Language:
+      - en
+      Strict-Transport-Security:
+      - max-age=7889238
+      X-Request-Id:
+      - '05935428-fe03-43bb-9db6-3306d1067e14'
+      X-Shopify-Stage:
+      - production
+      Content-Security-Policy:
+      - 'default-src ''self'' data: blob: ''unsafe-inline'' ''unsafe-eval'' https://*
+        shopify-pos://*; block-all-mixed-content; child-src ''self'' https://* shopify-pos://*;
+        connect-src ''self'' wss://* https://*; frame-ancestors ''none''; img-src
+        ''self'' data: blob: https:; script-src https://cdn.shopify.com https://cdn.shopifycdn.net
+        https://checkout.shopifycs.com https://js-agent.newrelic.com https://bam.nr-data.net
+        https://api.stripe.com https://mpsnare.iesnare.com https://appcenter.intuit.com
+        https://www.paypal.com https://js.braintreegateway.com https://c.paypal.com
+        https://maps.googleapis.com https://www.google-analytics.com https://v.shopify.com
+        https://widget.intercom.io https://js.intercomcdn.com ''self'' ''unsafe-inline''
+        ''unsafe-eval''; upgrade-insecure-requests; report-uri /csp-report?source%5Baction%5D=query&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fgraphql&source%5Bsection%5D=admin_api&source%5Buuid%5D=05935428-fe03-43bb-9db6-3306d1067e14'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block; report=/xss-report?source%5Baction%5D=query&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fgraphql&source%5Bsection%5D=admin_api&source%5Buuid%5D=05935428-fe03-43bb-9db6-3306d1067e14
+      X-Dc:
+      - gcp-us-east1,gcp-us-east1
+      Set-Cookie:
+      - "<redacted-response>"
+      - _shopify_fs=2021-02-25T23%3A04%3A23Z; Expires=Fri, 25-Feb-22 23:04:23 GMT;
+        Domain=ikenom-test.myshopify.com; Path=/; SameSite=Lax
+      - _shopify_s=04ec0ed3-4fe6-4228-86ab-0fc8d65b6484; Expires=Thu, 25-Feb-21 23:34:23
+        GMT; Domain=ikenom-test.myshopify.com; Path=/; SameSite=Lax
+      - _shopify_y=6699c462-2dfd-4013-9635-e439c08ad1bf; Expires=Fri, 25-Feb-22 23:04:23
+        GMT; Domain=ikenom-test.myshopify.com; Path=/; SameSite=Lax
+      - _y=6699c462-2dfd-4013-9635-e439c08ad1bf; Expires=Fri, 25-Feb-22 23:04:23 GMT;
+        Domain=ikenom-test.myshopify.com; Path=/; SameSite=Lax
+      Nel:
+      - '{"report_to":"network-errors","max_age":2592000,"success_fraction":0.0001}'
+      Report-To:
+      - '{"group":"network-errors","max_age":2592000,"endpoints":[{"url":"https://monorail-edge.shopifycloud.com/v1/reports/nel/20190325/shopify"}]}'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '087d08be090000f3796f1d7000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 627510a9ad73f379-ATL
+      Alt-Svc:
+      - h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"productCreate":{"product":{"id":"gid:\/\/shopify\/Product\/6538877796552","title":"Barbecue
+        Ribs","tags":["tag","test"],"createdAt":"2021-02-25T23:04:23Z","variants":{"edges":[{"node":{"id":"gid:\/\/shopify\/ProductVariant\/39258921304264"}}]}},"userErrors":[]}},"extensions":{"cost":{"requestedQueryCost":13,"actualQueryCost":13,"throttleStatus":{"maximumAvailable":1000.0,"currentlyAvailable":987,"restoreRate":50.0}}}}'
+  recorded_at: Thu, 25 Feb 2021 23:04:25 GMT
+- request:
+    method: post
+    uri: https://ikenom-test.myshopify.com/admin/api/2021-01/graphql.json
+    body:
+      encoding: UTF-8
+      string: '{"query":"mutation ProductService__DELETE_SHOPIFY_PRODUCT_QUERY($id:
+        ID!) {\n  productDelete(input: {id: $id}) {\n    deletedProductId\n    userErrors
+        {\n      field\n      message\n    }\n  }\n}","variables":{"id":"gid://shopify/Product/6538877796552"},"operationName":"ProductService__DELETE_SHOPIFY_PRODUCT_QUERY"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - ShopifyAPI/9.3.0 ActiveResource/5.1.1 Ruby/2.7.1
+      Authorization:
+      - "<redacted-request>"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 25 Feb 2021 23:04:24 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Sorting-Hat-Podid:
+      - '199'
+      X-Sorting-Hat-Shopid:
+      - '52915503304'
+      Vary:
+      - Accept-Encoding
+      Referrer-Policy:
+      - origin-when-cross-origin
+      X-Frame-Options:
+      - DENY
+      X-Shopid:
+      - '52915503304'
+      X-Shardid:
+      - '199'
+      X-Stats-Userid:
+      - ''
+      X-Stats-Apiclientid:
+      - '4905995'
+      X-Stats-Apipermissionid:
+      - '306260967624'
+      X-Shopify-Api-Terms:
+      - By accessing or using the Shopify API you agree to the Shopify API License
+        and Terms of Use at https://www.shopify.com/legal/api-terms
+      X-Shopify-Api-Version:
+      - 2021-01
+      Content-Language:
+      - en
+      Strict-Transport-Security:
+      - max-age=7889238
+      X-Request-Id:
+      - e5318d24-11b6-4c1e-8f92-c0b3a017952f
+      X-Shopify-Stage:
+      - production
+      Content-Security-Policy:
+      - 'default-src ''self'' data: blob: ''unsafe-inline'' ''unsafe-eval'' https://*
+        shopify-pos://*; block-all-mixed-content; child-src ''self'' https://* shopify-pos://*;
+        connect-src ''self'' wss://* https://*; frame-ancestors ''none''; img-src
+        ''self'' data: blob: https:; script-src https://cdn.shopify.com https://cdn.shopifycdn.net
+        https://checkout.shopifycs.com https://js-agent.newrelic.com https://bam.nr-data.net
+        https://api.stripe.com https://mpsnare.iesnare.com https://appcenter.intuit.com
+        https://www.paypal.com https://js.braintreegateway.com https://c.paypal.com
+        https://maps.googleapis.com https://www.google-analytics.com https://v.shopify.com
+        https://widget.intercom.io https://js.intercomcdn.com ''self'' ''unsafe-inline''
+        ''unsafe-eval''; upgrade-insecure-requests; report-uri /csp-report?source%5Baction%5D=query&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fgraphql&source%5Bsection%5D=admin_api&source%5Buuid%5D=e5318d24-11b6-4c1e-8f92-c0b3a017952f'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block; report=/xss-report?source%5Baction%5D=query&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fgraphql&source%5Bsection%5D=admin_api&source%5Buuid%5D=e5318d24-11b6-4c1e-8f92-c0b3a017952f
+      X-Dc:
+      - gcp-us-east1,gcp-us-east1
+      Set-Cookie:
+      - "<redacted-response>"
+      - _shopify_fs=2021-02-25T23%3A04%3A24Z; Expires=Fri, 25-Feb-22 23:04:24 GMT;
+        Domain=ikenom-test.myshopify.com; Path=/; SameSite=Lax
+      - _shopify_s=c01780c4-bdf7-473c-a014-94df9afc7b82; Expires=Thu, 25-Feb-21 23:34:24
+        GMT; Domain=ikenom-test.myshopify.com; Path=/; SameSite=Lax
+      - _shopify_y=acbf7709-a995-400d-ae15-795485816121; Expires=Fri, 25-Feb-22 23:04:24
+        GMT; Domain=ikenom-test.myshopify.com; Path=/; SameSite=Lax
+      - _y=acbf7709-a995-400d-ae15-795485816121; Expires=Fri, 25-Feb-22 23:04:24 GMT;
+        Domain=ikenom-test.myshopify.com; Path=/; SameSite=Lax
+      Nel:
+      - '{"report_to":"network-errors","max_age":2592000,"success_fraction":0.0001}'
+      Report-To:
+      - '{"group":"network-errors","max_age":2592000,"endpoints":[{"url":"https://monorail-edge.shopifycloud.com/v1/reports/nel/20190325/shopify"}]}'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '087d08c056000007d2cb227000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 627510ad595207d2-ATL
+      Alt-Svc:
+      - h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"productDelete":{"deletedProductId":"gid:\/\/shopify\/Product\/6538877796552","userErrors":[]}},"extensions":{"cost":{"requestedQueryCost":10,"actualQueryCost":10,"throttleStatus":{"maximumAvailable":1000.0,"currentlyAvailable":990,"restoreRate":50.0}}}}'
+  recorded_at: Thu, 25 Feb 2021 23:04:25 GMT
 recorded_with: VCR 6.0.0

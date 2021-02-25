@@ -48,7 +48,8 @@ RSpec.describe CreateVendorJob, type: :job do
   end
 
   it "should add to tag list" do
-    expect_any_instance_of(CustomerService).to receive(:create_customer).with(hash_including({ tags: %w[tag1 vendor] })).and_return(shopify_id)
+    name = "name:#{business_name}"
+    expect_any_instance_of(CustomerService).to receive(:create_customer).with(hash_including({ tags: ["tag1", "vendor", name] })).and_return(shopify_id)
     perform
   end
 end

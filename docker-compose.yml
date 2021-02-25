@@ -31,7 +31,9 @@ services:
     networks:
       - network
     ports:
-      - "4000:3000"
+      - "4020:3000"
+    depends_on:
+      - mongo
 
   hutch:
     restart: always
@@ -61,14 +63,14 @@ services:
     image: mongo:4.2.5
     restart: always
     ports:
-      - "5001:27017"
+      - "5021:27017"
     networks:
       - network
 
   rabbitmq:
     image: 'bitnami/rabbitmq:latest'
     ports:
-      - "5002:15672"
+      - "5022:15672"
     networks:
       - network
 

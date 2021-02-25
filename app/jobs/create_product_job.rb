@@ -11,11 +11,11 @@ class CreateProductJob < ApplicationJob
 
     result = ProductService.new.create_product(business_name: vendor.business_name, product_type: product_type, collection_to_join: vendor.collection_id, product_name: product_name, tags: tags)
     product = Product.create!({
-                      name: product_name,
-                      shopify_id: result[:shopify_id],
-                      variant_id: result[:variant_id],
-                      vendor: vendor
-                    })
+                                name: product_name,
+                                shopify_id: result[:shopify_id],
+                                variant_id: result[:variant_id],
+                                vendor: vendor
+                              })
 
     UpdateProductPriceJob.perform_later(product_variant_id: result[:variant_id], price: price)
     CreateProductExporterJob.perform_later(sender_id: sender_id, product_id: product.id.to_s)

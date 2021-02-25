@@ -19,11 +19,11 @@ RSpec.describe UpdateProductConsumer do
   it "should enqueue update product job" do
     consumer.process(message)
     expect(UpdateProductJob).to have_been_enqueued.with(hash_including({
-      sender_id: message[:sender_id],
-      product_id: message[:product_id],
-      product_name: message[:product_name],
-      price: message[:price],
-      tags: message[:tags]
-    }))
+                                                                         sender_id: message[:sender_id],
+                                                                         product_id: message[:product_id],
+                                                                         product_name: message[:product_name],
+                                                                         price: message[:price],
+                                                                         tags: message[:tags]
+                                                                       }))
   end
 end

@@ -27,7 +27,7 @@ RSpec.describe UpdateProductJob, type: :job do
     expect(UpdateProductExporterJob).to have_been_enqueued.with({
                                                                   sender_id: sender_id,
                                                                   product_id: product.id.to_s
-    })
+                                                                })
   end
 
   it "should queue UpdateProdctPriceJob" do
@@ -35,7 +35,7 @@ RSpec.describe UpdateProductJob, type: :job do
     expect(UpdateProductPriceJob).to have_been_enqueued.with({
                                                                product_variant_id: product.variant_id,
                                                                price: price
-    })
+                                                             })
   end
 
   it "should fail to update product because product doesn't exist" do

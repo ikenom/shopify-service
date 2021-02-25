@@ -8,12 +8,12 @@ RSpec.describe CreateProductJob, type: :job do
   let(:tags) { [Faker::Name.name] }
   let(:price) { Faker::Commerce.price(range: 0..10.0, as_string: true) }
 
-  let(:payload) {
+  let(:payload) do
     {
       shopify_id: Faker::Alphanumeric.alpha,
       variant_id: Faker::Alphanumeric.alpha
     }
-  }
+  end
 
   subject(:perform) do
     described_class.perform_now(
@@ -35,9 +35,9 @@ RSpec.describe CreateProductJob, type: :job do
   it "should queue UpdateProductPriceJob" do
     perform
     expect(UpdateProductPriceJob).to have_been_enqueued.with({
-      product_variant_id: payload[:variant_id],
+                                                               product_variant_id: payload[:variant_id],
                                                                price: price
-    })
+                                                             })
   end
 
   it "should create new product" do

@@ -7,8 +7,8 @@ class UpdateProductExporterJob < ApplicationJob
     Hutch.connect
     product = Product.find(product_id)
     Hutch.publish("shopify.product.updated", {
-      sender_id: sender_id,
-      product_id: product.shopify_id
+                    sender_id: sender_id,
+                    product_id: product.shopify_id
                   })
   end
 end

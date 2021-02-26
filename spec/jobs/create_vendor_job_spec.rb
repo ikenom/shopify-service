@@ -33,7 +33,8 @@ RSpec.describe CreateVendorJob, type: :job do
     expect(CreateVendorCollectionJob).to have_been_enqueued.with({
                                                                    shopify_id: shopify_id,
                                                                    sender_id: sender_id,
-                                                                   business_name: business_name
+                                                                   business_name: business_name,
+                                                                   phone: phone
                                                                  })
   end
 

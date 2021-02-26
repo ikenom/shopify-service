@@ -7,7 +7,7 @@ class CreateVendorConsumer
 
   def process(message)
     CreateVendorJob.perform_later(
-      user_id: message[:user_id],
+      sender_id: message[:sender_id],
       business_name: message[:business_name],
       first_name: message[:first_name],
       last_name: message[:last_name],

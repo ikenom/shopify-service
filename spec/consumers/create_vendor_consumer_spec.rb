@@ -3,7 +3,7 @@
 RSpec.describe CreateVendorConsumer do
   let(:message) do
     {
-      user_id: Faker::Alphanumeric.alpha,
+      sender_id: Faker::Alphanumeric.alpha,
       business_name: Faker::Alphanumeric.alpha,
       first_name: Faker::Alphanumeric.alpha,
       last_name: Faker::Alphanumeric.alpha,
@@ -21,7 +21,7 @@ RSpec.describe CreateVendorConsumer do
   it "should enqueue create vendor jobs" do
     consumer.process(message)
     expect(CreateVendorJob).to have_been_enqueued.with(hash_including({
-                                                                        user_id: message[:user_id],
+                                                                        sender_id: message[:sender_id],
                                                                         business_name: message[:business_name],
                                                                         first_name: message[:first_name],
                                                                         last_name: message[:last_name],

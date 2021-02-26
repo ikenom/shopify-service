@@ -96,7 +96,7 @@ class ProductService
     result = shopify_query(UPDATE_PRODUCT_QUERY, {
                              id: product_shopify_id,
                              tags: tags,
-                             title: product_name
+                             product_name: product_name
                            })
 
     result["productUpdate"]["product"]["id"]

@@ -14,7 +14,7 @@ jobs:
 
       - name: Build and push image
         run: |
-          docker login ghcr.io -u ${{ secrets.CONTAINER_REGISTRY_USERNAME }} --password-stdin <<< ${{ secrets.CONTAINER_REGISTRY_PASSWORD }}
+          docker login ghcr.io -u $GITHUB_ACTOR --password-stdin <<< ${{ secrets.CONTAINER_REGISTRY_PASSWORD }}
           docker pull ghcr.io/${{ github.event.repository.owner.login }}/${{ github.event.repository.name }}:latest
           docker build . \
             --tag ghcr.io/${{ github.event.repository.owner.login }}/${{ github.event.repository.name }}:$GITHUB_SHA \
@@ -51,7 +51,7 @@ jobs:
       - name: Pacakage and push Helm
         run: |
           VERSION=$(git tag | sort -r --version-sort | head -n1)
-          VERSION=${VERSION#"${{ github.event.repository.name }}-"}
+          VERSION=${VERSION#"ecommerce-orchestrator-"}
           VERSION=$(bumpversion --current-version $VERSION --dry-run --list patch)
           VERSION=${VERSION#"new_version="}
           helm package -u --app-version $GITHUB_SHA --version $VERSION chart

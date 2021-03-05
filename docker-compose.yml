@@ -31,7 +31,7 @@ services:
     networks:
       - network
     ports:
-      - "4020:3000"
+      - "5020:3000"
     depends_on:
       - mongo
 

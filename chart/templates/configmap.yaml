@@ -6,6 +6,7 @@ data:
   RELEASE_NAME: {{ .Release.Name }}
   RAILS_ENV: production
   SECRET_KEY_BASE: production_test_key
+  RAILS_LOG_TO_STDOUT: true
   RABBITMQ_USERNAME: {{ .Values.rabbitmq.auth.username }}
   RABBITMQ_PASSWORD: {{ .Values.rabbitmq.auth.password }}
   API_KEY: {{ .Values.shopify.api_key }}
